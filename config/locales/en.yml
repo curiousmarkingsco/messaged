@@ -1,0 +1,8 @@
+en:
+  messaged:
+    send_a_message: 'Send a message'
+    type_your_message: 'Type your message here'
+    confirm: 'Are you sure?'
+    edit: 'Edit'
+    delete: 'Delete'
+    header: Messages

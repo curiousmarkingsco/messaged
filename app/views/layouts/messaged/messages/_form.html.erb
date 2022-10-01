@@ -1,0 +1,5 @@
+<%= form_with model: message, class: 'messaged-form' do |f| %>
+  <%= f.label :body, t('messaged.send_a_message') %>
+  <%= f.text_area :body, class: 'messaged-textarea' placeholder: t('messaged.type_your_message') %>
+  <%= f.submit nil, class: 'messaged-button' %>
+<% end %>
