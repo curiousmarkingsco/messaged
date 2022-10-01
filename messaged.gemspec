@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["admin@ianrandmckenzie.com"]
   spec.homepage    = "https://github.com/ianrandmckenzie/messaged"
   spec.summary     = "A Rails Engine for Hotwire Turbo-powered instant messaging."
-  spec.description = "A Rails Engine for Hotwire Turbo-powered instant messaging."
+  spec.description = "CAUTION: This gem is in development. Use at your own risk. Messaged is a Rails engine built by Jumpstart Pro enthusiasts."
     spec.license     = "MIT"
   
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"

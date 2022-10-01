@@ -1,8 +1,10 @@
 # Messaged
-Short description and motivation.
+A Rails Engine for Hotwire Turbo-powered instant messaging.
 
 ## Usage
-How to use my plugin.
+TODO: How to use Messaged.
+
+TODO: Add option for `rails g messaged:views`
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -22,7 +24,8 @@ $ gem install messaged
 ```
 
 ## Contributing
-Contribution directions go here.
+See [CONTRIBUTING.md](https://github.com/ianrandmckenzie/messaged/blob/main/CONTRIBUTING.md)
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+See also: [LICENSE.txt](https://github.com/ianrandmckenzie/messaged/blob/main/LICENSE.txt)
