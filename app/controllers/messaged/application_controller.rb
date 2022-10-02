@@ -5,6 +5,8 @@ module Messaged
       :messaged_current_user,
       :messaged_current_tenant
 
+    protected
+
     # The `current_user` and `signed_in?` methods are prefixed with `messaged_`
     # to avoid conflicts with methods from the parent controller.
 
@@ -31,6 +33,7 @@ module Messaged
       @room = nil
       return unless params && params[:room_id]
       @room = Room.find(params[:room_id])
+      return @room
     end
 
     # Here we define an owner in the event that there is a current_tenant or

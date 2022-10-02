@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  acts_as_tenant(:account)
+  acts_as_tenant :account, optional: true
+
+  # has_many :messages, class_name: 'Messaged::Message'
+  # has_many :rooms, class_name: 'Messaged::Room'
 end

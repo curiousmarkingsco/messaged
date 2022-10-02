@@ -1,0 +1,12 @@
+<%= turbo_frame_tag dom_id(message) do %>
+  <div class="messaged-message-container">
+    <div>
+      <span  class="messaged-timestamp"><%= time_ago_in_words(message.created_at) %> ago</span>
+      <p  class="messaged-body"><%= message.content %></p>
+      <div class="messaged-options">
+        <span><%= link_to t('messaged.edit'), messaged.edit_message_path(message), class: "messaged-edit-link", "data-turbo-action": "replace" %></span>
+        <%= button_to t('messaged.delete'), messaged.message_path(message), method: :delete, form: { data: { turbo_confirm: t('messaged.confirm') } }, class: "messaged-delete-link", "data-turbo-action": "delete" %>
+      </div>
+    </div>
+  </div>
+<% end %>

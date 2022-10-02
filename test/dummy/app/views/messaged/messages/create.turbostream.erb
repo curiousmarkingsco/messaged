@@ -1,0 +1,2 @@
+<%= turbo_stream.append "messages", @message %>
+<%= turbo_stream.update "new_message", partial: "form", locals: { message: @new_message } %>

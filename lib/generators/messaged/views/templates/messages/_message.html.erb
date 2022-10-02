@@ -1,12 +1,6 @@
 <%= turbo_frame_tag dom_id(message) do %>
   <div class="messaged-message-container">
-    <% if message&.user %>
-      <%= image_tag avatar_url_for(message.user), class: "messaged-avatar" %>
-    <% end %> 
     <div>
-      <% if message&.user %>
-        <strong class="messaged-username"><%= message.user&.first_name&.capitalize %></strong>
-      <% end %> 
       <span  class="messaged-timestamp"><%= time_ago_in_words(message.created_at) %> ago</span>
       <p  class="messaged-body"><%= message.content %></p>
       <div class="messaged-options">

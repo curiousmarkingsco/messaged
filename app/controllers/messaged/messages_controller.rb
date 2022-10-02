@@ -9,14 +9,14 @@ module Messaged
       # @messages = Message.where(account: current_account)
       @messages = Message.all
       @new_message = Message.new
-      @new_message = current_owner.messages.build if current_owner
+      @new_message = messaged_current_owner.messages.build if messaged_current_owner
     end
 
     def show; end
 
     def new
       @message = Message.new
-      @message = current_owner.messages.build if current_owner
+      @message = messaged_current_owner.messages.build if messaged_current_owner
     end
 
     def create
@@ -24,9 +24,7 @@ module Messaged
       # @message = Message.new(message_params.merge(account: current_account, user: current_user))
       @message = Message.new(message_params)
       if @message.save
-        # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
-        @new_message = Message.new
-        @new_message = current_owner.messages.build if current_owner
+        @new_message = messaged_current_owner.messages.build if messaged_current_owner
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: turbo_stream.append(:messages, partial: "messaged/messages/message",
@@ -67,7 +65,7 @@ module Messaged
     end
 
     def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:content, :user_id, :tenant_id, :messaged_room_id)
     end
   end
 end
