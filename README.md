@@ -10,12 +10,12 @@ gem "messaged"
 
 And then execute:
 ```bash
-$ bundle
+bundle
 ```
 
 Or install it yourself as:
 ```bash
-$ gem install messaged
+gem install messaged
 ```
 
 Generate the needed migrations and initializer:
