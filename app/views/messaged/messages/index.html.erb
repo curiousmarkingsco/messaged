@@ -7,6 +7,7 @@
         <% end %>
         <% # TODO: How do we make current_user model agnostic? %>
         <%#= turbo_stream_from current_account, "messages" %>
+        <%= turbo_stream_from "messages" %>
         <div class="messaged-messages" id="messages">
             <%= render @messages %>
         </div>

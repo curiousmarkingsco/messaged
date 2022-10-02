@@ -2,7 +2,12 @@
 A Rails Engine for Hotwire Turbo-powered instant messaging.
 
 ## Usage
-TODO: How to use Messaged.
+TODO: How to use Messaged. (finish below)
+
+Messages broadcast to the DOM element id `messages`
+```html
+<div id="messages"></div>
+```
 
 TODO: Add option for `rails g messaged:views`
 
@@ -21,6 +26,12 @@ $ bundle
 Or install it yourself as:
 ```bash
 $ gem install messaged
+```
+
+### Dependencies
+It is recommended, particularly for development, to have a websockets compatible web server.
+```ruby
+gem "puma"
 ```
 
 ## Contributing

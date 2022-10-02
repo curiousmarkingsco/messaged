@@ -1,3 +1,4 @@
+# This migration comes from messaged (originally 20221001034722)
 class CreateMessagedMessages < ActiveRecord::Migration[7.0]
   def change
     create_table :messaged_messages do |t|
