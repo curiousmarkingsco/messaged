@@ -8,16 +8,15 @@ module Messaged
       # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
       # @messages = Message.where(account: current_account)
       @messages = Message.all
-      # @new_message = current_user.messages.build
       @new_message = Message.new
+      @new_message = current_owner.messages.build if current_owner
     end
 
     def show; end
 
     def new
-      # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
-      # @message = current_user.messages.build
       @message = Message.new
+      @message = current_owner.messages.build if current_owner
     end
 
     def create
@@ -26,8 +25,8 @@ module Messaged
       @message = Message.new(message_params)
       if @message.save
         # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
-        # @new_message = current_user.messages.build
         @new_message = Message.new
+        @new_message = current_owner.messages.build if current_owner
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: turbo_stream.append(:messages, partial: "messaged/messages/message",

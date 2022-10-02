@@ -6,3 +6,4 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     header: Messages
+    null_user_name: 'Deleted User'
