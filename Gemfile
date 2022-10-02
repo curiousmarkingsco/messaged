@@ -12,3 +12,6 @@ gem "sprockets-rails"
 
 # Start debugger with binding.b [https://github.com/ruby/debug]
 # gem "debug", ">= 1.0.0"
+
+gem "devise"
+gem "acts_as_tenant"

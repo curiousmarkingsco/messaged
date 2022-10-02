@@ -11,3 +11,7 @@ gem "sprockets-rails"
 # gem "debug", ">= 1.0.0"
 gem "importmap-rails"
 gem "turbo-rails"
+
+# Test use supported cases
+gem "devise"
+gem "acts_as_tenant"

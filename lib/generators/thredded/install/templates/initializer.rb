@@ -9,9 +9,6 @@ Messaged.user_class = 'User'
 # This method is used by Messaged controllers and views to fetch the currently signed-in user
 Messaged.current_user_method = :"current_#{Messaged.user_class_name.demodulize.underscore}"
 
-# User avatar URL. rails_gravatar gem is used by default:
-Messaged.avatar_url = ->(user) { RailsGravatar.src(user.email, 156, 'mm') }
-
 # ==> Multi-tenant Configuration
 # The name of the class your app uses for your tenants.
 # By default the engine will use nil (in other words, tenancy in the
