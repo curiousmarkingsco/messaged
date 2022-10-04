@@ -71,6 +71,10 @@ See [CONTRIBUTING.md](https://github.com/ianrandmckenzie/messaged/blob/main/CONT
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 See also: [LICENSE.txt](https://github.com/ianrandmckenzie/messaged/blob/main/LICENSE.txt)
 
+## Other Info
+Messaged is intended to be named through the nomenclature used in [Noticed](https://github.com/excid3/noticed), in part because Collin and I met through the GoRails Discord server (owned by @excid3).
+—Ian
+
 ## TODO
 * Add dynamic configurations for message broadcasting to tenants (like an organization chat room), rooms (like a Discord channel), or users (like direct messages in most direct-messaging apps such as Signal)
 * Figure out how to support permissioning/authorization (such as Pundit/Cancancan) without being opinionated
