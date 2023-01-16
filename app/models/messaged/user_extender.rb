@@ -3,8 +3,8 @@ module Messaged
     extend ActiveSupport::Concern
     included do
       with_options dependent: :nullify, foreign_key: 'user_id', inverse_of: :user do
-        has_many :messages, class_name: 'Messaged::Message'
-        has_many :rooms, class_name: 'Messaged::Room'
+        has_many :messages, class_name: 'Messaged::Message', dependent: :destroy
+        has_many :rooms, class_name: 'Messaged::Room', dependent: :destroy
       end
     end
 

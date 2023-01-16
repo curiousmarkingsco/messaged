@@ -14,7 +14,7 @@ module Messaged
     end
     validates :title, presence: true
 
-    has_many :messages
+    has_many :messages, dependent: :destroy
 
     # Messages should default to the person sending them, otherwise
     # fallback to the chat room, and finally tenant if they exist.

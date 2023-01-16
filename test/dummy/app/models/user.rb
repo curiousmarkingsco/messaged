@@ -5,7 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   acts_as_tenant :account, optional: true
-
-  # has_many :messages, class_name: 'Messaged::Message'
-  # has_many :rooms, class_name: 'Messaged::Room'
 end

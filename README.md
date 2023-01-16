@@ -1,6 +1,8 @@
 # Messaged
 A Rails Engine for Hotwire Turbo-powered instant messaging.
 
+The author would personally recommend against using this Gem if your Rails application is not built for Turbo Rails.
+
 ## Installation
 Add this line to your application's Gemfile:
 
