@@ -9,14 +9,16 @@ module Messaged
       # @messages = Message.where(account: current_account)
       @messages = Message.all
       @new_message = Message.new
-      @new_message = messaged_current_owner.messages.build if messaged_current_owner
+      return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
+      @new_message = messaged_current_owner.messages.build
     end
 
     def show; end
 
     def new
       @message = Message.new
-      @message = messaged_current_owner.messages.build if messaged_current_owner
+      return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
+      @message = messaged_current_owner.messages.build
     end
 
     def create
@@ -24,7 +26,8 @@ module Messaged
       # @message = Message.new(message_params.merge(account: current_account, user: current_user))
       @message = Message.new(message_params)
       if @message.save
-        @new_message = messaged_current_owner.messages.build if messaged_current_owner
+        return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
+        @new_message = messaged_current_owner.messages.build
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: turbo_stream.append(:messages, partial: "messaged/messages/message",
