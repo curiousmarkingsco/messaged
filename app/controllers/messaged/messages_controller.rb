@@ -26,8 +26,9 @@ module Messaged
       # @message = Message.new(message_params.merge(account: current_account, user: current_user))
       @message = Message.new(message_params)
       if @message.save
-        return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
-        @new_message = messaged_current_owner.messages.build
+        if messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
+          @new_message = messaged_current_owner.messages.build
+        end
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: turbo_stream.append(:messages, partial: "messaged/messages/message",
