@@ -7,9 +7,5 @@ module Messaged
     config.to_prepare do
       Messaged.user_class&.send(:include, Messaged::UserExtender)
     end
-
-    # initializer "messaged.assets.precompile" do |app|
-    #   app.config.assets.precompile += %w( messaged/application.css )
-    # end
   end
 end
