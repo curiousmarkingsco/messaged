@@ -36,6 +36,24 @@ To get started with a basic HTML structure, run in your terminal: `rails generat
 
 If you're using this engine or `turbo-rails` for the first time, it is recommended to generate the views to familiarize yourself with how turbo tags are used when turbo streaming.
 
+### Routes
+
+If you're starting a fresh application, ensure your application has a root path.
+```ruby
+# For example:
+root to: "home#index"
+```
+
+Next, set up your ActionCable routes if you haven't already.
+```ruby 
+mount ActionCable.server => '/cable'
+```
+
+Lastly, mount the Messaged engine's paths.
+```ruby
+mount Messaged::Engine => "/messaged"
+```
+
 ### Users
 Messaged assumes you have a user model. You may customize the user model name in the initializer. For example, if your user model is called Member:
 ```ruby

@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["admin@ianrandmckenzie.com"]
   spec.homepage    = "https://github.com/ianrandmckenzie/messaged"
   spec.summary     = "A Rails Engine for Hotwire Turbo-powered instant messaging."
-  spec.description = "CAUTION: This gem is in development. Use at your own risk. Messaged is a Rails engine built by Jumpstart Pro enthusiasts."
+  spec.description = "A quick and easy way to implement an instant-messaging module using Turbo Rails."
     spec.license     = "MIT"
   
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 7.0.2.3"
-  spec.add_dependency "importmap-rails", "1.1.5"
-  spec.add_dependency "turbo-rails", "1.3.0"
+  spec.add_dependency "importmap-rails", ">= 1.1.5"
+  spec.add_dependency "turbo-rails", ">= 1.2.0"
 end

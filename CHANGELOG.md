@@ -12,3 +12,7 @@
 * Add Devise and ActsAsTenant to dummy app
 * Move views into generator
 * Add compatibility for `current_user` and `current_tenant`
+### January 2023
+* Begin writing tests
+* Partner with TestKit for BDD-style tests, more info to come on the README
+* Publish on rubygems.org
