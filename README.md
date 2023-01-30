@@ -26,6 +26,15 @@ rails generate messaged:install
 rails messaged:install:migrations
 ```
 
+### Importmap
+
+If you do not yet have importmap-rails added to your application, be sure to add `config/importmap.rb`:
+```ruby
+# config/importmap.rb
+pin "application", preload: true
+pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
+```
+
 ## Usage
 Messages broadcast to the DOM element id `messages`
 ```html
