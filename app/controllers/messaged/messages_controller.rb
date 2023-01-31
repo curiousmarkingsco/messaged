@@ -1,6 +1,6 @@
 module Messaged
   class MessagesController < ApplicationController
-    # TODO: How does the enginer user require authnetication without assuming Devise?
+    # TODO: How does the engine user require authnetication without assuming Devise?
     # before_action :authenticate_user!
     before_action :set_message, only: [:destroy, :edit, :show, :update]
 

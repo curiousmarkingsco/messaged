@@ -1,5 +1,5 @@
 module Messaged
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
     helper Messaged::Engine.helpers
     helper_method \
       :messaged_current_user,
