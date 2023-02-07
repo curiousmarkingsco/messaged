@@ -1,7 +1,6 @@
 module Messaged
   class MessagesController < ApplicationController
-    # TODO: How does the engine user require authnetication without assuming Devise?
-    # before_action :authenticate_user!
+    # User should be authenticated by main.app
     before_action :set_message, only: [:destroy, :edit, :show, :update]
 
     def index
@@ -44,7 +43,6 @@ module Messaged
     def edit; end
 
     def update
-      # TODO: (Security risk) How to authenticate user agnostically?
     if @message.update(message_params)
       render @message
     else
@@ -53,7 +51,6 @@ module Messaged
     end
 
     def destroy
-      # TODO: (Security risk) How to authenticate user agnostically?
       @message.destroy
       respond_to do |format|
         format.turbo_stream { render turbo_stream: turbo_stream.remove(@message) }
@@ -64,7 +61,6 @@ module Messaged
     private
 
     def set_message
-      # TODO: (Security risk) How to authenticate user agnostically before declaring?
       @message = Message.find(params[:id])
     end
 

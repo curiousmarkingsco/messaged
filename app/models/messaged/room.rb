@@ -3,20 +3,20 @@ module Messaged
     # User association
     belongs_to :user,
       class_name: Messaged.user_class_name,
-      inverse_of: :messages,
+      inverse_of: :rooms,
       optional: true
     # Multi-tenant option
     if Messaged.tenant_class_name
       belongs_to :tenant,
         class_name: Messaged.tenant_class_name,
-        inverse_of: :messages,
+        inverse_of: :rooms,
         optional: true
     end
     validates :title, presence: true
 
-    has_many :messages, dependent: :destroy
+    has_many :rooms, dependent: :destroy
 
-    # Messages should default to the person sending them, otherwise
+    # Rooms should default to the person sending them, otherwise
     # fallback to the chat room, and finally tenant if they exist.
     def owner
       return user if user
