@@ -1,0 +1,21 @@
+<div class="messaged-index-container">
+  <div class="messaged-outer-wrapper">
+    <div class="messaged-inner-wrapper">
+      <div class="messaged-index">
+        <% if t('messaged.header').present? %>
+          <h1 class="messaged-header"><%= t('messaged.room_index') %></h1>
+        <% end %>
+        <% # TODO: How do we make current_user model agnostic? %>
+        <%#= turbo_stream_from current_account, "rooms" %>
+        <%= turbo_stream_from "rooms" %>
+        <div class="messaged-rooms" id="rooms">
+            <%= render @rooms %>
+        </div>
+
+        <%= turbo_frame_tag "new_room" do %>
+          <%= render "form", room: @new_room %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

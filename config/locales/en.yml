@@ -7,3 +7,5 @@ en:
     delete: 'Delete'
     header: Messages
     null_user_name: 'Deleted User'
+    room_name: 'Room Name'
+    room_index: 'Rooms'

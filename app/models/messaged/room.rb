@@ -5,6 +5,11 @@ module Messaged
       class_name: Messaged.user_class_name,
       inverse_of: :rooms,
       optional: true
+    # Recipient user association
+    belongs_to :recipient,
+      class_name: Messaged.user_class_name,
+      inverse_of: :rooms,
+      optional: true
     # Multi-tenant option
     if Messaged.tenant_class_name
       belongs_to :tenant,
@@ -14,7 +19,7 @@ module Messaged
     end
     validates :title, presence: true
 
-    has_many :rooms, dependent: :destroy
+    has_many :messages, dependent: :destroy
 
     # Rooms should default to the person sending them, otherwise
     # fallback to the chat room, and finally tenant if they exist.

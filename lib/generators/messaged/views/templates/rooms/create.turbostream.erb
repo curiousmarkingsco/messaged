@@ -1,0 +1,2 @@
+<%= turbo_stream.append "rooms", @room %>
+<%= turbo_stream.update "new_room", partial: "form", locals: { room: @new_room } %>

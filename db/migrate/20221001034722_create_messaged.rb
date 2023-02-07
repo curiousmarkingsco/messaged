@@ -8,6 +8,9 @@ class CreateMessaged < Messaged::BaseMigration
       t.references :user, type: tenant_id_type, index: false
       t.index [:user_id], name: :index_messaged_rooms_on_user_id
 
+      t.references :recipient, type: tenant_id_type, index: false
+      t.index [:recipient_id], name: :index_messaged_rooms_on_recipient_id
+
       t.string :title
 
       t.timestamps

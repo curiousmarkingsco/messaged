@@ -1,0 +1,30 @@
+<%= turbo_frame_tag dom_id(room) do %>
+  <div class="messaged-room-container">
+    <div>
+      <div class="messaged-options">
+        <span><%= link_to t('messaged.edit'), messaged.edit_room_path(room), class: "messaged-edit-link", "data-turbo-action": "replace" %></span>
+        <%= button_to t('messaged.delete'), messaged.room_path(room), method: :delete, form: { data: { turbo_confirm: t('messaged.confirm') } }, class: "messaged-delete-link", "data-turbo-action": "delete" %>
+      </div>
+      <div class="messaged-index-container">
+        <div class="messaged-outer-wrapper">
+          <div class="messaged-inner-wrapper">
+            <div class="messaged-index">
+              <% if room.title.present? %>
+                <h1 class="messaged-header"><%= room.title %></h1>
+              <% end %>
+              <%#= turbo_stream_from current_account, "messages" %>
+              <%= turbo_stream_from "messages" %>
+              <div class="messaged-messages" id="messages">
+                  <%= render @room.messages %>
+              </div>
+
+              <%= turbo_frame_tag "new_message" do %>
+                <%= render "messages/form", message: @new_message %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
