@@ -61,7 +61,7 @@ module Messaged
     end
 
     def room_params
-      params.require(:room).permit(:content, :user_id, :tenant_id, :messaged_room_id)
+      params.require(:room).permit(:title, :user_id, :tenant_id, :recipient_id)
     end
   end
 end

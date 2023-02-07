@@ -4,8 +4,6 @@ module Messaged
     before_action :set_message, only: [:destroy, :edit, :show, :update]
 
     def index
-      # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
-      # @messages = Message.where(account: current_account)
       @messages = Message.all
       @new_message = Message.new
       return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
@@ -21,8 +19,6 @@ module Messaged
     end
 
     def create
-      # TODO: How does the enginer user require authnetication without assuming Devise / ActsAsTenant?
-      # @message = Message.new(message_params.merge(account: current_account, user: current_user))
       @message = Message.new(message_params)
       if @message.save
         if messaged_current_owner && messaged_current_owner.class != Messaged::NullUser

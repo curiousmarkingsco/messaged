@@ -105,8 +105,14 @@ Messaged is intended to be named through the nomenclature used in [Noticed](http
 —Ian
 
 ## TODO
-* Add dynamic configurations for message broadcasting to tenants (like an organization chat room), rooms (like a Discord channel), or users (like direct messages in most direct-messaging apps such as Signal)
-* Figure out how to support permissioning/authorization (such as Pundit/Cancancan) without being opinionated
 * Complete adding rich_text support
 * Ensure I18n support for hard-coded English strings that are seen by the end-user
-* Create and finish the test suite
+* Create and finish the test suite via TestKit
+
+### TODO on `bleeding` pre-merge
+* Make sure messages belong to rooms
+* Make sure rooms belong to both user and recipient
+* Make sure translations are in place of hard-coded front-end English words
+* Add documentation about how to extend messages and rooms
+	*	If not for anyone else, do it for future you
+* Add to docs about how it is up to the dev to determine how messages/rooms are authorized
