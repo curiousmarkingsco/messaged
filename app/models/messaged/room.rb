@@ -19,7 +19,7 @@ module Messaged
     end
     validates :title, presence: true
 
-    has_many :messages, dependent: :destroy
+    has_many :messaged_messages, dependent: :destroy, class_name: 'Messaged::Message', foreign_key: 'messaged_room_id'
 
     # Rooms should default to the person sending them, otherwise
     # fallback to the chat room, and finally tenant if they exist.

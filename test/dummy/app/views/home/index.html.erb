@@ -1,1 +1,14 @@
-Hi
+<h1>Hi</h1>
+
+<h2>New message</h2>
+<% User.all.each do |user| %>
+  <% next if current_user && user == current_user %>
+  <%= link_to "Message #{user.email}", messaged.new_room_path(recipient: user, title: user.email) %><br>
+<% end %>
+
+<% if current_user %>
+  <h2>Conversations</h2>
+  <% Messaged::Room.where(user_id: current_user.id).or(Messaged::Room.where(recipient_id: current_user.id)).each do |room| %>
+    <%= link_to "Convo with #{room.title}", messaged.room_path(room) %><br>
+  <% end %>
+<% end %>

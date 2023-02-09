@@ -5,7 +5,7 @@
         <% if t('messaged.header').present? %>
           <h1 class="messaged-header"><%= t('messaged.header') %></h1>
         <% end %>
-        <% # TODO: How do we make current_user model agnostic? %>
+
         <%#= turbo_stream_from current_account, "messages" %>
         <%= turbo_stream_from "messages" %>
         <div class="messaged-messages" id="messages">

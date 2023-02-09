@@ -5,15 +5,17 @@ module Messaged
 
     def index
       @rooms = Room.all
-      @new_room = Room.new
-      return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
-      @new_room = messaged_current_owner.rooms.build
     end
 
-    def show; end
+    def show
+      @new_message = Message.new
+      return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
+      @new_message = messaged_current_owner.messages.build
+    end
 
     def new
       @room = Room.new
+      @recipient = Messaged.user_class.find(params[:recipient]) if params.dig(:recipient)
       return unless messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
       @room = messaged_current_owner.rooms.build
     end
@@ -21,15 +23,8 @@ module Messaged
     def create
       @room = Room.new(room_params)
       if @room.save
-        if messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
-          @new_room = messaged_current_owner.rooms.build
-        end
         respond_to do |format|
-          format.turbo_stream do
-            render turbo_stream: turbo_stream.append(:rooms, partial: "messaged/rooms/room",
-              locals: { room: @room })
-          end
-          format.html { redirect_to rooms_url }
+          format.html { redirect_to @room }
         end
       else
         render :new, status: :unprocessable_entity
@@ -39,11 +34,11 @@ module Messaged
     def edit; end
 
     def update
-    if @room.update(room_params)
-      render @room
-    else
-      render :edit, status: :unprocessable_entity
-    end
+      if @room.update(room_params)
+        render @room
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
 
     def destroy

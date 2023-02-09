@@ -14,12 +14,11 @@ module Messaged
         inverse_of: :messages,
         optional: true
     end
-    belongs_to :room, optional: true
+    belongs_to :messaged_room, optional: true, class_name: 'Messaged::Room'
 
     has_rich_text :content
     validates :content, presence: true
 
-    # TODO: This needs to be added to a generator
     after_create_commit -> { broadcast_append_later_to ["messages"], target: "messages", partial: "messaged/messages/message" }
     after_update_commit -> { broadcast_replace_later_to ["messages"], target: "#{dom_id(self)}", partial: "messaged/messages/message" }
     after_destroy_commit -> { broadcast_remove_to ["messages"] }
@@ -28,7 +27,7 @@ module Messaged
     # fallback to the chat room, and finally tenant if they exist.
     def owner
       return user if user
-      return room if room
+      return messaged_room if messaged_room
       return tenant if Messaged.tenant_class_name && tenant
       return nil # replace with user, tenant, or room
     end

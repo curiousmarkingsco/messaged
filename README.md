@@ -106,13 +106,10 @@ Messaged is intended to be named through the nomenclature used in [Noticed](http
 
 ## TODO
 * Complete adding rich_text support
-* Ensure I18n support for hard-coded English strings that are seen by the end-user
+* Complete multi-tenant support
 * Create and finish the test suite via TestKit
 
 ### TODO on `bleeding` pre-merge
-* Make sure messages belong to rooms
-* Make sure rooms belong to both user and recipient
-* Make sure translations are in place of hard-coded front-end English words
 * Add documentation about how to extend messages and rooms
 	*	If not for anyone else, do it for future you
 * Add to docs about how it is up to the dev to determine how messages/rooms are authorized

@@ -23,6 +23,8 @@ module Messaged
       if @message.save
         if messaged_current_owner && messaged_current_owner.class != Messaged::NullUser
           @new_message = messaged_current_owner.messages.build
+        else
+          @new_message = Message.new
         end
         respond_to do |format|
           format.turbo_stream do

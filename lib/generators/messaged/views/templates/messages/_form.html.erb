@@ -1,8 +1,8 @@
 <%= form_with model: message, class: 'messaged-form' do |f| %>
   <%= f.label :content, t('messaged.send_a_message') %>
-  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :user_id, value: messaged_current_user.id if messaged_current_user %>
   <%= f.hidden_field :tenant_id %>
-  <%= f.hidden_field :messaged_room_id %>
+  <%= f.hidden_field :messaged_room_id, value: room.id if room %>
   <%= f.text_area :content %>
   <%= f.submit nil, class: 'messaged-button' %>
 <% end %>

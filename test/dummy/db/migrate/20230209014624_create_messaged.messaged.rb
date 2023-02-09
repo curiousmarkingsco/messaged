@@ -1,3 +1,4 @@
+# This migration comes from messaged (originally 20221001034722)
 require 'messaged/base_migration'
 class CreateMessaged < Messaged::BaseMigration
   def change
