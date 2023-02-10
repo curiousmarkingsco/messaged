@@ -7,7 +7,7 @@
 Messaged.user_class = 'User'
 
 # This method is used by Messaged controllers and views to fetch the currently signed-in user
-Messaged.current_user_method = :"current_#{Messaged.user_class_name.demodulize.underscore}"
+Messaged.current_user_method = :current_user
 
 # ==> Multi-tenant Configuration
 # The name of the class your app uses for your tenants.
