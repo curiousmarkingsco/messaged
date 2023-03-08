@@ -16,7 +16,7 @@ module Messaged
     end
     belongs_to :messaged_room, optional: true, class_name: 'Messaged::Room'
 
-    has_rich_text :content
+    has_rich_text :rich_content
     validates :content, presence: true
 
     after_create_commit -> { broadcast_append_later_to ["messages"], target: "messages", partial: "messaged/messages/message" }
