@@ -19,9 +19,9 @@ module Messaged
     has_rich_text :rich_content
     validates :content, presence: true
 
-    after_create_commit -> { broadcast_append_later_to ["messages"], target: "messages", partial: "messaged/messages/message" }
-    after_update_commit -> { broadcast_replace_later_to ["messages"], target: "#{dom_id(self)}", partial: "messaged/messages/message" }
-    after_destroy_commit -> { broadcast_remove_to ["messages"] }
+    # after_create_commit -> { broadcast_append_later_to ["messages"], target: "messages", partial: "messaged/messages/message" }
+    # after_update_commit -> { broadcast_replace_later_to ["messages"], target: "#{dom_id(self)}", partial: "messaged/messages/message" }
+    # after_destroy_commit -> { broadcast_remove_to ["messages"] }
 
     # Messages should default to the person sending them, otherwise
     # fallback to the chat room, and finally tenant if they exist.
