@@ -19,7 +19,7 @@ module Messaged
     has_rich_text :rich_content
     validates :content, presence: true
 
-    broadcast_to messaged_room
+    broadcast_to :messaged_room
 
     # after_create_commit -> { broadcast_append_later_to ["messages"], target: "messages", partial: "messaged/messages/message" }
     # after_update_commit -> { broadcast_replace_later_to ["messages"], target: "#{dom_id(self)}", partial: "messaged/messages/message" }
