@@ -3,6 +3,10 @@ A Rails Engine for Hotwire Turbo-powered instant messaging.
 
 The author would personally recommend against using this Gem if your Rails application is not built for Turbo Rails.
 
+As seen on PalmerTrolls on YouTube!
+
+![Video of Ben Palmer using `messaged` through a prank website](https://www.youtube.com/watch?v=5cDe5vkq9cs)
+
 ## Installation
 Add this line to your application's Gemfile:
 
