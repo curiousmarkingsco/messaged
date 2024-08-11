@@ -4,8 +4,8 @@ Gem::Specification.new do |spec|
   spec.name        = "messaged"
   spec.version     = Messaged::VERSION
   spec.authors     = ["cjilbert504, ianrandmckenzie"]
-  spec.email       = ["admin@ianrandmckenzie.com"]
-  spec.homepage    = "https://github.com/ianrandmckenzie/messaged"
+  spec.email       = ["ian@curiousmarkings.com"]
+  spec.homepage    = "https://github.com/curiousmarkingsco/messaged"
   spec.summary     = "A Rails Engine for Hotwire Turbo-powered instant messaging."
   spec.description = "A quick and easy way to implement an instant-messaging module using Turbo Rails."
     spec.license     = "MIT"
