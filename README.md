@@ -3,6 +3,11 @@ A Rails Engine for Hotwire Turbo-powered instant messaging.
 
 The author would personally recommend against using this Gem if your Rails application is not built for Turbo Rails.
 
+As seen on PalmerTrolls on YouTube! Watch on YouTube:
+
+[![Video of Ben Palmer using `messaged` through a prank website](https://img.youtube.com/vi/5cDe5vkq9cs/0.jpg)](https://www.youtube.com/watch?v=5cDe5vkq9cs)
+
+
 ## Installation
 Add this line to your application's Gemfile:
 
@@ -91,14 +96,14 @@ gem "rails", ">= 7.0.2.3"
 gem "importmap-rails", "1.1.5"
 gem "turbo-rails", "1.3.0"
 ```
-If your application cannot support these gems, it is recommended that you do not use the Messaged engine. Alternatively, feel free to work this engine and add support for your desired setup. Pull requests are welcome, see: [CONTRIBUTING.md](https://github.com/ianrandmckenzie/messaged/blob/main/CONTRIBUTING.md)
+If your application cannot support these gems, it is recommended that you do not use the Messaged engine. Alternatively, feel free to work this engine and add support for your desired setup. Pull requests are welcome, see: [CONTRIBUTING.md](https://github.com/curiousmarkingsco/messaged/blob/main/CONTRIBUTING.md)
 
 ## Contributing
-See [CONTRIBUTING.md](https://github.com/ianrandmckenzie/messaged/blob/main/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/curiousmarkingsco/messaged/blob/main/CONTRIBUTING.md)
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-See also: [LICENSE.txt](https://github.com/ianrandmckenzie/messaged/blob/main/LICENSE.txt)
+See also: [LICENSE.txt](https://github.com/curiousmarkingsco/messaged/blob/main/LICENSE.txt)
 
 ## Other Info
 Messaged is intended to be named through the nomenclature used in [Noticed](https://github.com/excid3/noticed), in part because Collin and I met through the GoRails Discord server (owned by @excid3).
